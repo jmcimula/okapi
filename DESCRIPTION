@@ -1,0 +1,13 @@
+Package: okapi
+Type: Package
+Title: The package for Okapi News Tracker
+Version: 0.1.0
+Author: Jean Marie Cimula
+Maintainer: Jean Marie Cimula <jmkacim@gmail.com>
+Description: An implementation of dashboard to follow the lifecycle of articles
+    posted on the website of Okapi Radio
+License: GPL-2
+URL: https://github.com/jmkacim/okapi
+BugReports: https://github.com/jmkacim/okapi/issues
+LazyData: true
+RoxygenNote: 5.0.1
