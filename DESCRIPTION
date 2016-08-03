@@ -6,6 +6,8 @@ Author: Jean Marie Cimula
 Maintainer: Jean Marie Cimula <jmkacim@gmail.com>
 Description: An implementation of dashboard to follow the lifecycle of articles
     posted on the website of Okapi Radio
+Imports:
+    stringr
 License: GPL-2
 URL: https://github.com/jmkacim/okapi
 BugReports: https://github.com/jmkacim/okapi/issues
