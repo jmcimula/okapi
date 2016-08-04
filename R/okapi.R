@@ -74,11 +74,12 @@ get_okapi_news <- function (news, number){
 				sc_value <- unlist(gregexpr(pattern = '>', ky_pub))
 
 				ky_datepub <- stringr::str_trim(substr(ky_pub,sc_value[2] + 1,sc_value[2] + 18))#Substring to get the date of Pub.
+				
+				nb_words <- sum(stringi::stri_count_words(readLines(ky_link)))
 
-				const_df <- data.frame (news = kpc, datepub = ky_datepub, link = ky_link)
+				const_df <- data.frame (news = kpc, datepub = ky_datepub, link = ky_link, nb_words = nb_words)
 
-				text_df <- rbind(text_df, const_df)
-				#get_st_analysis (ky_link) still pending from st_analysis.R
+				text_df <- rbind(text_df, const_df)#, get_st_analysis (ky_link) still pending
 
 		}#Loop to extract data
 	}
