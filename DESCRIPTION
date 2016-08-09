@@ -2,6 +2,7 @@ Package: okapi
 Type: Package
 Title: The package for Okapi News Tracker
 Version: 0.1.0
+Date: 2016-08-03
 Author: Jean Marie Cimula
 Maintainer: Jean Marie Cimula <jmkacim@gmail.com>
 Description: An implementation of dashboard to follow the lifecycle of articles
