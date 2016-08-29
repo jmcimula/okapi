@@ -10,15 +10,16 @@
 #'
 #'@export
 
-get_okapi_news <- function (news, number){
+okapi_news <- function (news, number){
 #get_okapi_news <- function (news, from, to, format) #Just fit it with this model after
-        sc_http <- "http://www.radiookapi.net/"
 
-        number <- as.integer(number)
+  sch <- "http://www.radiookapi.net/"
 
-		plink <- paste(sc_http, news, sep="")
+  number <- as.integer(number)
 
-	    text_df <- data.frame()
+	plink <- paste(sch, news, sep="")
+
+	text_df <- data.frame()
 
 	for (i in 0 : number){
 
@@ -62,7 +63,7 @@ get_okapi_news <- function (news, number){
 				#Reference character
 				sc_value <- unlist(gregexpr(pattern = '>', ky_pub))
 
-				ky_link <- paste(sc_http, stringr::str_trim( substr ( ky_pub, 1, sc_value[1] - 2) ), sep="")#Getting the Link
+				ky_link <- paste(sch, stringr::str_trim( substr ( ky_pub, 1, sc_value[1] - 2) ), sep="")#Getting the Link
 
 				kpc <- stringr::str_trim(substr(ky_pub, sc_value[1] + 1, sc_value[2] - 4))#Substring to get the kpc
 
@@ -74,7 +75,7 @@ get_okapi_news <- function (news, number){
 				sc_value <- unlist(gregexpr(pattern = '>', ky_pub))
 
 				ky_datepub <- stringr::str_trim(substr(ky_pub,sc_value[2] + 1,sc_value[2] + 18))#Substring to get the date of Pub.
-				
+
 				nb_words <- sum(stringi::stri_count_words(readLines(ky_link)))
 
 				const_df <- data.frame (news = kpc, datepub = ky_datepub, link = ky_link, nb_words = nb_words)
